@@ -12,19 +12,21 @@ public class Users {
 	  private Long id;
 	  private String firstName;
 	  private String lastName;
+	  private String password;
 
 	  protected Users() {}
 
-	  public Users(String firstName, String lastName) {
+	  public Users(String firstName, String lastName ,String password) {
 	    this.firstName = firstName;
 	    this.lastName = lastName;
+	    this.password = password;
 	  }
 
 	  @Override
 	  public String toString() {
 	    return String.format(
-	        "Customer[id=%d, firstName='%s', lastName='%s']",
-	        id, firstName, lastName);
+	        "Customer[id=%d, firstName='%s', lastName='%s,password='%s']",
+	        id, firstName, lastName,password);
 	  }
 
 	  public Long getId() {
@@ -38,4 +40,7 @@ public class Users {
 	  public String getLastName() {
 	    return lastName;
 	  }
+	  public String getpassword() {
+		    return password;
+		  }
 }
