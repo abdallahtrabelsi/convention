@@ -23,7 +23,7 @@ public class LoginController {
 		String password =loginForm.getPassword();
 		System.out.println(password);
 		if("admin".equals(username)&& "admin".equals(password)) {
-			System.out.println("hello");
+		//	System.out.println("hello");
 			return "Home";
 		}
 		model.addAttribute("invalid",true);
