@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +17,7 @@ public class Users {
 	  protected Users() {}
 
 	  public Users(String firstName, String lastName ,String password) {
+		  
 	    this.firstName = firstName;
 	    this.lastName = lastName;
 	    this.password = password;
