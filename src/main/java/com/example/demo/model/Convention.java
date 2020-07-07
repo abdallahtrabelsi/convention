@@ -8,19 +8,27 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "conventions")
+@EntityListeners(AuditingEntityListener.class)
+@JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
+        allowGetters = true)
 public class Convention {
 	@Id
 	@Column(name = "convention_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	public Long id;
 
 	public String type;
 
@@ -51,11 +59,11 @@ public class Convention {
 		this.listConventionParticipant = listConventionParticipant;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
