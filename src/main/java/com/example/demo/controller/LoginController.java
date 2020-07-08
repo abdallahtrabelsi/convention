@@ -29,5 +29,5 @@ public class LoginController {
 		model.addAttribute("invalid",true);
 		return "login";
 		
-	}
+	}	
 }

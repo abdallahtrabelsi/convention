@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import com.example.demo.repository.ConventionRepository;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/convention")
 public class ConventionController {
 	
@@ -38,6 +40,19 @@ public class ConventionController {
 	 public List<Convention> getConvnetionByobj(@PathVariable(value = "obj") String obj) {
 		 return conventionrepository.findByobjet(obj);
 	       
+	    }
+	 
+	 
+	 @DeleteMapping("/delconv/{id}")
+	 public List<Convention> deleteConvention(@PathVariable(value = "id") Long id) {
+		  conventionrepository.deleteById(id);
+		  return getAllConvention();
+	    }
+	 
+	  @PostMapping("/addconv")
+	    public Boolean createNote(@RequestBody Convention conv) {
+	         conventionrepository.save(conv);
+	         return true;
 	    }
 	 
 }
