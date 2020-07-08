@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.model.Convention;
+import com.example.demo.model.TypeConvention;
 import com.example.demo.repository.ConventionRepository;
 
 
@@ -54,5 +55,11 @@ public class ConventionController {
 	         conventionrepository.save(conv);
 	         return true;
 	    }
+	  
+	  @GetMapping("/gettype")
+		 public List<String> getType() {
+			 return TypeConvention.getTypes();
+		       
+		    }
 	 
 }

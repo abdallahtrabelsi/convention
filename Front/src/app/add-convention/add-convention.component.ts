@@ -14,16 +14,20 @@ export class AddConventionComponent implements OnInit {
   convention: Convention = new Convention('', this.x, this.x, this.x, 'n', 'n');
 
   constructor(private service : ConventionServiceService) { }
-  conventionn: any;
+  type: any;
   message: any;
   public addConvention(){
     let resp = this.service.addConvention(this.convention);
     resp.subscribe((data) => this.message = data);
     window.location.href= 'http://localhost:4200';
-
-
    }
+
+
+
   ngOnInit(): void {
+
+    let resp = this.service.getType();
+    resp.subscribe((data) => this.type = data);
   }
 
 }
