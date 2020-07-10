@@ -39,7 +39,13 @@ public class ConventionController {
 	 
 	 @GetMapping("/getconvbyobj/{obj}")
 	 public List<Convention> getConvnetionByobj(@PathVariable(value = "obj") String obj) {
-		 return conventionrepository.findByobjet(obj);
+		
+		 List<Convention> x = conventionrepository.findByobjet(obj);
+		 
+		 if(!x.isEmpty())
+			 return x;
+		 else 
+			 return  conventionrepository.findBytype(obj);
 	       
 	    }
 	 

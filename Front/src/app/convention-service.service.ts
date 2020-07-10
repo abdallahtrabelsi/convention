@@ -14,7 +14,14 @@ export class ConventionServiceService {
   public getConvention(){
     return this.http.get('http://localhost:8080/convention/getconv');
   }
+
+  public getType(){
+    return this.http.get('http://localhost:8080/convention/gettype');
+  }
   public delConvention(id: number){
     return this.http.delete('http://localhost:8080/convention/delconv/' + id);
+  }
+  public searchConvention(obj: string){
+    return this.http.get('http://localhost:8080/convention/getconvbyobj/' + obj);
   }
 }

@@ -8,10 +8,10 @@
     <div class="row">
                <div id="custom-search-input">
                                 <div class="input-group col-md-12" style="text-align: center">
-                                    <input type="text" class="search-query form-control" placeholder="Search With Email Address"  name="email" [(ngModel)]="email"/>
+                                    <input type="text" class="search-query form-control" placeholder="Search With Email Address"  name="email" [(ngModel)]="variable"/>
                                     <span class="input-group-btn">
-                                        <button class="btn btn-danger" type="button">
-                                        <!--(click)="findUserByEmailId()">
+                                        <button class="btn btn-danger" type="button" (click)="searchConvention(variable)">
+                                        <!-->
                                         (click)="delteUser(user.id)"-->
                                             <span class=" glyphicon glyphicon-search"></span>
                                         </button>
@@ -26,7 +26,7 @@
     <table class="table table-striped custab">
     <thead>
         <tr>
-            <th>Id</th>
+
             <th>Date Creation</th>
             <th>Date Expiration</th>
             <th>Date Viguer</th>
@@ -36,7 +36,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let con of conventionn">
-            <td>{{con.id}}</td>
+
             <td>{{con.dateEditionConvention}}</td>
             <td>{{con.dateExpirationConvention}}</td>
             <td>{{con.dateVigueurConvention}}</td>
