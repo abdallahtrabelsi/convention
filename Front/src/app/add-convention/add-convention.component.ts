@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { Convention } from '../convention';
 import { ConventionServiceService } from '../convention-service.service';
 
@@ -16,12 +16,20 @@ export class AddConventionComponent implements OnInit {
   constructor(private service : ConventionServiceService) { }
   type: any;
   message: any;
+  sel: string;
   public addConvention(){
+    this.convention.type=this.sel;
     let resp = this.service.addConvention(this.convention);
     resp.subscribe((data) => this.message = data);
     window.location.href= 'http://localhost:4200';
    }
+   selectChangeHandler(event: any) {
+    //update the ui
 
+
+    this.sel = event.target.value;
+    console.log(this.sel);
+  }
 
 
   ngOnInit(): void {

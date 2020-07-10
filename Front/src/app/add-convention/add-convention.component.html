@@ -22,9 +22,9 @@
 
                               <div class="form-group">
                                 <label for="email"><span class="req">* </span> type: </label>
-                                <select class="form-control" required>
+                                <select  (change)="selectChangeHandler($event)" class="form-control" required>
                                   <option value=null disabled selected>Select Convention Type</option>
-                                  <option *ngFor="let item of type" [value]="item">{{item}}</option>
+                                  <option  *ngFor="let item of type" [value]="item">{{item}}</option>
                               </select>
                                 <div class="status" id="status"></div>
                             </div>

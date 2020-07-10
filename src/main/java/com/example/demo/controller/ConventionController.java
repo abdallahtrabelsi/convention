@@ -31,11 +31,7 @@ public class ConventionController {
 	       
 	    }
 	
-	 @GetMapping("/getconvbytype/{type}")
-	 public List<Convention> getConvnetionByType(@PathVariable(value = "type") String type) {
-		 return conventionrepository.findBytype(type);
-	       
-	    }
+
 	 
 	 @GetMapping("/getconvbyobj/{obj}")
 	 public List<Convention> getConvnetionByobj(@PathVariable(value = "obj") String obj) {
