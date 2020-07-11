@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,13 +33,13 @@ public class Convention {
 
 	public String type;
 
-	public LocalDate dateEditionConvention;
+	public Date dateEditionConvention;
 
 	public String objet;
 
-	public LocalDate dateVigueurConvention;
+	public Date dateVigueurConvention;
 
-	public LocalDate dateExpirationConvention;
+	public Date dateExpirationConvention;
 
 	@OneToMany(mappedBy = "convention", cascade = CascadeType.ALL)
 	private Set<ConventionParticipant> listConventionParticipant = new HashSet<>();
@@ -48,8 +49,8 @@ public class Convention {
 		super();
 	}
 
-	public Convention(String type, LocalDate dateEditionConvention, String objet, LocalDate dateVigueurConvention,
-			LocalDate dateExpirationConvention, Set<ConventionParticipant> listConventionParticipant) {
+	public Convention(String type, Date dateEditionConvention, String objet, Date dateVigueurConvention,
+			Date dateExpirationConvention, Set<ConventionParticipant> listConventionParticipant) {
 		super();
 		this.type = type;
 		this.dateEditionConvention = dateEditionConvention;
@@ -75,11 +76,11 @@ public class Convention {
 		this.type = type;
 	}
 
-	public LocalDate getDateEditionConvention() {
+	public Date getDateEditionConvention() {
 		return dateEditionConvention;
 	}
 
-	public void setDateEditionConvention(LocalDate dateEditionConvention) {
+	public void setDateEditionConvention(Date dateEditionConvention) {
 		this.dateEditionConvention = dateEditionConvention;
 	}
 
@@ -91,19 +92,19 @@ public class Convention {
 		this.objet = objet;
 	}
 
-	public LocalDate getDateVigueurConvention() {
+	public Date getDateVigueurConvention() {
 		return dateVigueurConvention;
 	}
 
-	public void setDateVigueurConvention(LocalDate dateVigueurConvention) {
+	public void setDateVigueurConvention(Date dateVigueurConvention) {
 		this.dateVigueurConvention = dateVigueurConvention;
 	}
 
-	public LocalDate getDateExpirationConvention() {
+	public Date getDateExpirationConvention() {
 		return dateExpirationConvention;
 	}
 
-	public void setDateExpirationConvention(LocalDate dateExpirationConvention) {
+	public void setDateExpirationConvention(Date dateExpirationConvention) {
 		this.dateExpirationConvention = dateExpirationConvention;
 	}
 
