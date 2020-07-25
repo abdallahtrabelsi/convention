@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this._service.loginUserFromRemote(this.user).subscribe(
 
       data => {console.log('reponse recieved');
-               this._router.navigate(['/LParticipantComponent'] );
+               this._router.navigate(['/conv'] );
          //      window.location.href = 'http://localhost:8080/registeruser';
     },
       erreur => {console.log('exception occured');

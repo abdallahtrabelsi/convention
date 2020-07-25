@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Convention } from '../convention';
-import { ConventionServiceService } from '../convention-service.service';
+import { ConventionServiceService } from 'src/app/convention-service.service';
+import { Convention } from 'src/app/convention';
+//import { Convention } from '../convention';
+//import { ConventionServiceService } from '../convention-service.service';
 
 @Component({
   selector: 'app-convention',
@@ -14,7 +16,7 @@ export class ConventionComponent implements OnInit {
   constructor(private service: ConventionServiceService) { }
   conventionn: any;
 
-   public delConvention(id: number){
+   public delConvention (id: number){
     let resp = this.service.delConvention(id);
     resp.subscribe((data) => this.conventionn = data);
 

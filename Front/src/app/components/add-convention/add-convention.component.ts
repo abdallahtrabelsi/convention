@@ -1,6 +1,8 @@
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
-import { Convention } from '../convention';
-import { ConventionServiceService } from '../convention-service.service';
+import { Convention } from 'src/app/convention';
+import { ConventionServiceService } from 'src/app/convention-service.service';
+//import { Convention } from './convention';
+//import { ConventionServiceService } from '../convention-service.service';
 
 
 @Component({
